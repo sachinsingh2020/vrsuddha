@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import logo from "../../assets/vrsuddhaLogo.png";
 
 export default function Navbar() {
   const [count, setCount] = useState(0);
@@ -29,8 +30,8 @@ export default function Navbar() {
     <header className="sticky top-0 z-40 border-b border-[#163e2a]/10 bg-[#fffaf0]/90 backdrop-blur-xl">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <Link href="/" className="flex items-center gap-3 text-[#163e2a]" aria-label="VRSHUDDHA home">
-          <div className="flex items-center gap-3 rounded-full border border-[#163e2a]/10 bg-white px-2 py-1 shadow-sm">
-            <Image src="/logo.svg" alt="VRSHUDDHA" width={150} height={34} />
+          <div className="flex items-center gap-3 rounded-full border border-[#163e2a]/10 bg-white p-1 shadow-sm">
+            <Image src={logo} alt="VRSHUDDHA" width={52} height={52} className="rounded-full object-cover" />
           </div>
         </Link>
 
