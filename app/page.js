@@ -14,12 +14,8 @@ export default function Home() {
             </p>
 
             <div className="mt-6 flex gap-3">
-              <Link href="/shop">
-                <a className="rounded bg-amber-600 px-4 py-2 text-white">Shop Now</a>
-              </Link>
-              <Link href="/about">
-                <a className="rounded border px-4 py-2">About Us</a>
-              </Link>
+              <Link href="/shop" className="rounded bg-amber-600 px-4 py-2 text-white">Shop Now</Link>
+              <Link href="/about" className="rounded border px-4 py-2">About Us</Link>
             </div>
 
             <div className="mt-8 grid grid-cols-2 gap-4">

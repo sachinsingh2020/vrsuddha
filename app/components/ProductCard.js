@@ -24,10 +24,8 @@ export default function ProductCard({ product }) {
 
   return (
     <div className="rounded border p-4 bg-white shadow-sm">
-      <Link href={`/product?slug=${product.slug}`}>
-        <a className="block">
-          <Image src={product.image} alt={product.name} width={420} height={280} className="rounded" />
-        </a>
+      <Link href={`/product?slug=${product.slug}`} className="block">
+        <Image src={product.image} alt={product.name} width={420} height={280} className="rounded" />
       </Link>
       <div className="mt-3 flex items-center justify-between">
         <div>

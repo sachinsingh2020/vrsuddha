@@ -28,29 +28,25 @@ export default function Navbar() {
   return (
     <header className="w-full border-b border-black/[.06] bg-white/70 backdrop-blur-sm">
       <div className="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
-        <Link href="/">
-          <a className="flex items-center gap-3">
-            <Image src="/logo.svg" alt="VRSHUDDHA" width={150} height={34} />
-          </a>
+        <Link href="/" className="flex items-center gap-3">
+          <Image src="/logo.svg" alt="VRSHUDDHA" width={150} height={34} />
         </Link>
 
         <nav className="flex items-center gap-4">
-          <Link href="/">
-            <a className="text-sm font-medium">Home</a>
+          <Link href="/" className="text-sm font-medium">
+            Home
           </Link>
-          <Link href="/shop">
-            <a className="text-sm font-medium">Shop</a>
+          <Link href="/shop" className="text-sm font-medium">
+            Shop
           </Link>
-          <Link href="/about">
-            <a className="text-sm font-medium">About</a>
+          <Link href="/about" className="text-sm font-medium">
+            About
           </Link>
-          <Link href="/cart">
-            <a className="relative inline-flex items-center gap-2 rounded-full border px-3 py-1 text-sm">
-              Cart
-              <span className="ml-1 inline-flex h-6 min-w-[22px] items-center justify-center rounded-full bg-amber-600 px-2 text-xs font-medium text-white">
-                {count}
-              </span>
-            </a>
+          <Link href="/cart" className="relative inline-flex items-center gap-2 rounded-full border px-3 py-1 text-sm">
+            Cart
+            <span className="ml-1 inline-flex h-6 min-w-[22px] items-center justify-center rounded-full bg-amber-600 px-2 text-xs font-medium text-white">
+              {count}
+            </span>
           </Link>
         </nav>
       </div>
