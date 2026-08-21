@@ -1,25 +1,34 @@
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-
-export const metadata = {
-  title: "About - VRSHUDDHA",
-};
-
 export default function AboutPage() {
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navbar />
-      <main className="mx-auto max-w-4xl px-6 py-12">
-        <h1 className="text-2xl font-semibold">About VRSHUDDHA</h1>
-        <p className="mt-4 text-zinc-700">
-          VRSHUDDHA is a family-run oil company focused on producing high-quality mustard oil using traditional
-          cold-pressing methods. We source premium seeds and maintain strict quality control so you receive pure,
-          aromatic oil with every bottle.
+    <main className="mx-auto max-w-4xl px-6 py-12">
+      <div className="text-sm font-bold uppercase tracking-[0.2em] text-[#d8a93d]">Our story</div>
+      <h1 className="mt-3 text-3xl font-black text-[#163e2a] md:text-4xl">About VRSHUDDHA</h1>
+      <div className="mt-6 space-y-5 text-base leading-8 text-[#425046]">
+        <p>
+          VRSHUDDHA is a family-run oil brand devoted to bringing authentic mustard oil to homes that value purity,
+          tradition, and taste. We work closely with trusted growers and use careful, time-tested extraction
+          methods to preserve the rich aroma and natural goodness of each seed.
         </p>
-        <h2 className="mt-6 text-xl font-semibold">Mission</h2>
-        <p className="mt-2 text-zinc-700">To bring pure, traditional mustard oil to modern kitchens while supporting local farmers.</p>
-      </main>
-      <Footer />
-    </div>
+        <p>
+          Our mission is simple: to make healthy, flavorful, traditional mustard oil accessible to modern kitchens
+          while supporting local agriculture and maintaining uncompromising quality at every stage.
+        </p>
+      </div>
+
+      <div className="mt-8 grid gap-5 md:grid-cols-3">
+        <div className="rounded-[22px] border border-[#163e2a]/10 bg-[#fffdf9] p-5 shadow-sm">
+          <div className="text-sm uppercase tracking-[0.18em] text-[#d8a93d]">Quality</div>
+          <div className="mt-3 text-xl font-bold text-[#163e2a]">Strict checks</div>
+        </div>
+        <div className="rounded-[22px] border border-[#163e2a]/10 bg-[#fffdf9] p-5 shadow-sm">
+          <div className="text-sm uppercase tracking-[0.18em] text-[#d8a93d]">Origin</div>
+          <div className="mt-3 text-xl font-bold text-[#163e2a]">Farm trusted</div>
+        </div>
+        <div className="rounded-[22px] border border-[#163e2a]/10 bg-[#fffdf9] p-5 shadow-sm">
+          <div className="text-sm uppercase tracking-[0.18em] text-[#d8a93d]">Promise</div>
+          <div className="mt-3 text-xl font-bold text-[#163e2a]">Pure taste</div>
+        </div>
+      </div>
+    </main>
   );
 }

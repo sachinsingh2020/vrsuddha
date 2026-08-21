@@ -26,25 +26,27 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className="w-full border-b border-black/[.06] bg-white/70 backdrop-blur-sm">
-      <div className="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-3">
-          <Image src="/logo.svg" alt="VRSHUDDHA" width={150} height={34} />
+    <header className="sticky top-0 z-40 border-b border-[#163e2a]/10 bg-[#fffaf0]/90 backdrop-blur-xl">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+        <Link href="/" className="flex items-center gap-3 text-[#163e2a]" aria-label="VRSHUDDHA home">
+          <div className="flex items-center gap-3 rounded-full border border-[#163e2a]/10 bg-white px-2 py-1 shadow-sm">
+            <Image src="/logo.svg" alt="VRSHUDDHA" width={150} height={34} />
+          </div>
         </Link>
 
-        <nav className="flex items-center gap-4">
-          <Link href="/" className="text-sm font-medium">
+        <nav className="hidden items-center gap-7 md:flex">
+          <Link href="/" className="text-sm font-semibold text-[#163e2a] transition hover:text-[#d8a93d]">
             Home
           </Link>
-          <Link href="/shop" className="text-sm font-medium">
+          <Link href="/shop" className="text-sm font-semibold text-[#163e2a] transition hover:text-[#d8a93d]">
             Shop
           </Link>
-          <Link href="/about" className="text-sm font-medium">
+          <Link href="/about" className="text-sm font-semibold text-[#163e2a] transition hover:text-[#d8a93d]">
             About
           </Link>
-          <Link href="/cart" className="relative inline-flex items-center gap-2 rounded-full border px-3 py-1 text-sm">
+          <Link href="/cart" className="inline-flex items-center gap-2 rounded-full bg-[#163e2a] px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-[#214d38]">
             Cart
-            <span className="ml-1 inline-flex h-6 min-w-[22px] items-center justify-center rounded-full bg-amber-600 px-2 text-xs font-medium text-white">
+            <span className="inline-flex h-6 min-w-6 items-center justify-center rounded-full bg-[#d8a93d] px-2 text-xs font-bold text-[#163e2a]">
               {count}
             </span>
           </Link>

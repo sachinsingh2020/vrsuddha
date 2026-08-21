@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { showToast } from "./Toast";
 
 export default function ProductCard({ product }) {
   function addToCart() {
@@ -16,26 +17,43 @@ export default function ProductCard({ product }) {
       }
       localStorage.setItem("vrshuddha_cart", JSON.stringify(arr));
       window.dispatchEvent(new Event("vrshuddha_cart_updated"));
-      alert(`${product.name} added to cart`);
+      showToast(`${product.name} added to cart`);
     } catch (e) {
       console.error(e);
     }
   }
 
   return (
-    <div className="rounded border p-4 bg-white shadow-sm">
-      <Link href={`/product?slug=${product.slug}`} className="block">
-        <Image src={product.image} alt={product.name} width={420} height={280} className="rounded" />
-      </Link>
-      <div className="mt-3 flex items-center justify-between">
-        <div>
-          <h3 className="text-lg font-semibold">{product.name}</h3>
-          <p className="text-sm text-zinc-600">{product.unit}</p>
+    <div className="overflow-hidden rounded-[24px] border border-[#163e2a]/10 bg-[#fffdf9] shadow-[0_20px_50px_rgba(22,62,42,0.08)] transition hover:-translate-y-1 hover:shadow-[0_25px_60px_rgba(22,62,42,0.12)]">
+      <Link href={`/product?slug=${product.slug}`} className="block overflow-hidden bg-[#f4ead7]">
+        <div className="relative h-72 overflow-hidden">
+          <Image
+            src={product.image}
+            alt={product.name}
+            fill
+            className="object-contain p-4 transition duration-500 hover:scale-105"
+          />
         </div>
-        <div className="text-right">
-          <div className="text-md font-bold">₹{product.price}</div>
-          <button onClick={addToCart} className="mt-2 rounded bg-amber-600 px-3 py-1 text-white text-sm">
-            Add
+      </Link>
+
+      <div className="space-y-4 p-5">
+        <div className="flex items-start justify-between gap-3">
+          <div>
+            <h3 className="text-xl font-bold text-[#163e2a]">{product.name}</h3>
+            <p className="mt-1 text-sm text-[#5d645e]">{product.unit}</p>
+          </div>
+          <div className="rounded-full bg-[#fbe7b2] px-2.5 py-1 text-xs font-bold text-[#163e2a]">Fresh</div>
+        </div>
+
+        <p className="text-sm leading-6 text-[#425046]">{product.description}</p>
+
+        <div className="flex items-center justify-between gap-3 pt-2">
+          <div className="text-2xl font-extrabold text-[#163e2a]">₹{product.price}</div>
+          <button
+            onClick={addToCart}
+            className="rounded-full bg-[#163e2a] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#214d38]"
+          >
+            Add to cart
           </button>
         </div>
       </div>
