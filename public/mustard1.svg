@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400">
+  <rect width="600" height="400" fill="#FFF7ED"/>
+  <g transform="translate(140,40)">
+    <rect width="200" height="320" rx="12" fill="#FDF6E3" stroke="#D97706" stroke-width="6"/>
+    <text x="24" y="180" font-family="sans-serif" font-size="22" fill="#92400E">Organic Mustard</text>
+    <text x="24" y="210" font-family="sans-serif" font-size="16" fill="#92400E">Cold-pressed, 1L</text>
+  </g>
+</svg>
