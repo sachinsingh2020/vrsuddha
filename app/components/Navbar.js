@@ -7,6 +7,7 @@ import logo from "../../assets/vrsuddhaLogo.png";
 
 export default function Navbar() {
   const [count, setCount] = useState(0);
+  const [isOpen, setIsOpen] = useState(false);
 
   function readCartCount() {
     try {
@@ -28,7 +29,7 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-[#163e2a]/10 bg-[#fffaf0]/90 backdrop-blur-xl">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
         <Link href="/" className="flex items-center gap-3 text-[#163e2a]" aria-label="VRSHUDDHA home">
           <div className="flex items-center gap-3 rounded-full border border-[#163e2a]/10 bg-white p-1 shadow-sm">
             <Image src={logo} alt="VRSHUDDHA" width={52} height={52} className="rounded-full object-cover" />
@@ -52,7 +53,54 @@ export default function Navbar() {
             </span>
           </Link>
         </nav>
+
+        <button
+          type="button"
+          aria-label="Toggle menu"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#163e2a]/10 bg-white text-[#163e2a] shadow-sm md:hidden"
+          onClick={() => setIsOpen((prev) => !prev)}
+        >
+          <span className="relative block h-4 w-5">
+            <span
+              className={`absolute left-0 h-0.5 w-5 rounded-full bg-current transition-all ${
+                isOpen ? "top-2 rotate-45" : "top-0"
+              }`}
+            ></span>
+            <span
+              className={`absolute left-0 top-2 h-0.5 w-5 rounded-full bg-current transition-all ${
+                isOpen ? "opacity-0" : "opacity-100"
+              }`}
+            ></span>
+            <span
+              className={`absolute left-0 h-0.5 w-5 rounded-full bg-current transition-all ${
+                isOpen ? "top-2 -rotate-45" : "top-4"
+              }`}
+            ></span>
+          </span>
+        </button>
       </div>
+
+      {isOpen && (
+        <div className="border-t border-[#163e2a]/10 bg-[#fffaf0] px-4 py-4 md:hidden">
+          <nav className="flex flex-col gap-3">
+            <Link href="/" className="rounded-xl px-3 py-2 text-sm font-semibold text-[#163e2a] hover:bg-white" onClick={() => setIsOpen(false)}>
+              Home
+            </Link>
+            <Link href="/shop" className="rounded-xl px-3 py-2 text-sm font-semibold text-[#163e2a] hover:bg-white" onClick={() => setIsOpen(false)}>
+              Shop
+            </Link>
+            <Link href="/about" className="rounded-xl px-3 py-2 text-sm font-semibold text-[#163e2a] hover:bg-white" onClick={() => setIsOpen(false)}>
+              About
+            </Link>
+            <Link href="/cart" className="flex items-center justify-between rounded-xl bg-[#163e2a] px-3 py-2.5 text-sm font-semibold text-white" onClick={() => setIsOpen(false)}>
+              <span>Cart</span>
+              <span className="inline-flex h-6 min-w-6 items-center justify-center rounded-full bg-[#d8a93d] px-2 text-xs font-bold text-[#163e2a]">
+                {count}
+              </span>
+            </Link>
+          </nav>
+        </div>
+      )}
     </header>
   );
 }
